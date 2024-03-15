@@ -11,7 +11,10 @@ export default defineConfig({
       manifest: false,
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}']
-      }
+      },
+      strategies: 'injectManifest',
+      srcDir: 'src/worker',
+      filename: 'service-worker.js'
      })
   ],
 })

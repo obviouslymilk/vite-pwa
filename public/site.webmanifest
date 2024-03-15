@@ -27,7 +27,7 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/vite-pwa/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FC3737",

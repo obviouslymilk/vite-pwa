@@ -1,5 +1,6 @@
 {
   "name": "vite-pwa",
+  "homepage": "https://obviouslymilk.github.io/vite-pwa/",
   "private": false,
   "version": "0.0.0",
   "type": "module",

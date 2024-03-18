@@ -1,3 +1,5 @@
+import { useAppStore } from "../store/AppStore";
+
 export function requestNotificationPermission() {
     new Promise(resolve => {
       Notification.requestPermission(resolve)?.then(resolve);
@@ -18,6 +20,8 @@ function sendTestNotification() {
 }
 
 function subcribeUserToPush() {
+  const appStore = useAppStore()
+
   return navigator.serviceWorker
     .register('/dev-sw.js?dev-sw')
     .then(registration => {
@@ -30,8 +34,7 @@ function subcribeUserToPush() {
 
       return registration.pushManager.subscribe(subscribeOtpions)
     }).then(pushSubscription => {
-      console.log('Recived Permission')
-      console.log(JSON.stringify(pushSubscription))
+      appStore.setPushSubscription(pushSubscription)
     })
 }
 

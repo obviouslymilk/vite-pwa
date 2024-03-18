@@ -1,7 +1,3 @@
-import { precacheAndRoute } from "workbox-precaching";
-
-self.addEventListener("install", e => {
-    console.log("Service Worker: Installed")
-})
+import { cleanupOutdatedCaches, precacheAndRoute } from "workbox-precaching";
 
 precacheAndRoute(self.__WB_MANIFEST)

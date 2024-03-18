@@ -3,16 +3,29 @@ export function requestNotificationPermission() {
       Notification.requestPermission(resolve)?.then(resolve);
     }).then(permission => {
       if (permission === "granted") {
-        sendTestNotification()
+        subcribeUserToPush()
       }
     })
 }
 
-export function sendTestNotification() {
+function sendTestNotification() {
     const options = {
         body: 'This is test notification!',
         icon: 'favicon.svg'
     }
 
     new Notification('Test Notification', options)
+}
+
+function subcribeUserToPush() {
+  return navigator.serviceWorker
+    .register('/dev-sw.js?dev-sw' || '/sw.js')
+    .then(registration => {
+      const subscribeOtpions = {
+        userVisibleOnly: true,
+        applicationServerKey: null
+      }
+
+      return registration.pushManager.subscribe(subscribeOtpions)
+    })
 }

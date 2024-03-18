@@ -1,6 +1,8 @@
 export function requestNotificationPermission() {
-    Notification.requestPermission().then(result => {
-      if (result === "granted") {
+    new Promise(resolve => {
+      Notification.requestPermission(resolve)?.then(resolve);
+    }).then(permission => {
+      if (permission === "granted") {
         sendTestNotification()
       }
     })

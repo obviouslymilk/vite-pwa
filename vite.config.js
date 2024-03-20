@@ -22,7 +22,6 @@ export default defineConfig({
       },
       strategies: 'injectManifest',
       filename: 'sw.js',
-      srcDir: 'src/worker/'
      })
   ],
 })

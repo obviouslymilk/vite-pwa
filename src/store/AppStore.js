@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useAppStore = defineStore('counter', () => {
+export const useAppStore = defineStore('appStore', () => {
     const pushSubscription = ref({})
 
     function setPushSubscription(result) {

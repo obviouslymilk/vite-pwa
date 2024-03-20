@@ -1,8 +1,5 @@
 <script setup>
-import { requestNotificationPermission } from './utils/notifications';
-
-
-
+import { requestNotificationPermission, sendTestNotification } from './utils/notifications';
 
 </script>
 
@@ -10,8 +7,15 @@ import { requestNotificationPermission } from './utils/notifications';
   <button @click="requestNotificationPermission">
     Subscribe to notifications
   </button>
+
+  <button @click="sendTestNotification">
+    Send notification
+  </button>
 </template>
 
 <style scoped>
-
+  button {
+    display: block;
+    margin: 0 auto 12px;
+  }
 </style>

@@ -10,15 +10,19 @@ export default defineConfig({
     mkcert(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto',
       devOptions: {
-        enabled: true
+        enabled: true,
+        type: 'module'
       },
       manifest: false,
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
         cleanupOutdatedCaches: true
       },
-      strategies: 'generateSW',
+      strategies: 'injectManifest',
+      filename: 'sw.js',
+      srcDir: 'src/worker/'
      })
   ],
 })

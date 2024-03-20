@@ -10,13 +10,8 @@ export function requestNotificationPermission() {
     })
 }
 
-function sendTestNotification() {
-    const options = {
-        body: 'This is test notification!',
-        icon: 'favicon.svg'
-    }
-
-    new Notification('Test Notification', options)
+export function sendTestNotification() {
+    const appStore = useAppStore()
 }
 
 function subcribeUserToPush() {

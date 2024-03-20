@@ -1,14 +1,16 @@
 <script setup>
+import { askForNotificationPermission, displayTestNotification } from './utils/notifications';
+
 
 </script>
 
 <template>
-  <button @click="">
+  <button @click="askForNotificationPermission">
     Subscribe to notifications
   </button>
 
-  <button @click="">
-    Send notification
+  <button @click="displayTestNotification">
+    Send test notification
   </button>
 </template>
 
